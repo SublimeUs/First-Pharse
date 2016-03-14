@@ -5,17 +5,18 @@ html{
 body{
 	min-width: 1280px;
 }
+body,ul,h1,h2,h3,h4,h5,h6{
+	padding: 0;
+	margin: 0;
+}
 h1,h2,h3,h4,h5,h6{
 	font-style: "SimHei 黑体";
-	margin: 0;
 }
 p{
 	font-family: "SimSun 宋体"
 }
 ul{
 	list-style: none;
-	padding: 0;
-	margin: 0;
 }
 a{
 	font-family: "Microsoft YaHei 微软雅黑";
@@ -25,27 +26,359 @@ a{
 a:hover,a:active{
 	color: #E74F4D;
 }
+button:focus{
+	outline: 0;
+}
 
 
 /*public end*/
 
+
+
+/*header*/
 .header{
 	padding: 10px 50px;
+	height: 37px;
+}
+.header>.header-left{
 	height: 37px;
 	line-height: 37px;
 	display: inline-block;
 }
-.header>.header-left{
-	height: inherit;
-}
-.header>.header-left>h1{
-	font-size: 21px;
-	height: inherit;
-	line-height: 37px;
-}
-.header>.header-left>h1>img{
+.header>.header-left>a>img{
+	float: left;
 	display: inline-block;
+	height: 37px;
 	width: auto;
-	height: 100%;
 	padding-right: 5px;
+}
+.header>.header-left>a>h1{
+	font-size: 21px;
+	display: inline-block;
+	height: 37px;
+	color: #393939;
+}
+.header>.header-right{
+	float: right;
+	height: 37px;
+}
+.header>.header-right>nav,.header>.header-right>a{
+	float: left;
+}
+.header>.header-right>nav{
+	width: 460px;
+}
+.header>.header-right>a{
+	width: 50px;
+	display: inline-block;
+	text-align: center;
+	color: #E74F4D;
+}
+.header>.header-right ul{
+	width: 100%;
+	height: 32px;
+	display: flex;
+}
+.header>.header-right li{
+	flex: 1;
+	text-align: center;
+	margin: 0 13.5px;
+	border-bottom: 5px solid transparent;
+	transition: .3s;
+}
+.header>.header-right li:hover{
+	border-bottom: 5px solid #E74F4D;
+}
+
+
+/*body*/
+.main-body{
+	background-color: #fff;
+}
+.welcome{
+	height: 490px;
+	background-image: url(../src/travel.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding: 220px 0 0 110px;
+	color: #fff;
+}
+.welcome>h2{
+	font-size: 60px;
+}
+.welcome>p{
+	font-stretch: 21px;
+	width: 298px;
+	line-height: 30px;
+}
+.welcome>button{
+	color: #fff;
+	margin: 25px 0;
+	background-color: #E74F4D;
+	border: none;
+	width: 330px;
+	height: 65px;
+	font-size: 30px;
+}
+.excellence{
+	height: 220px;
+	
+}
+.excellence>ul{
+	display: flex;
+	height: 100%;
+}
+.excellence>ul>li{
+	flex: 1;
+
+}
+.excellence .item-pic-wrap{
+	padding: 40px 0;
+}
+.excellence .item-pic-wrap>img{
+	display: block;
+	width: 42px;
+	height: 42px;
+	margin: 0 auto;
+}
+.excellence>ul>li>p{
+	width: 158px;
+	margin: 0 auto;
+	text-align: center;
+	color: #767676;
+	line-height: 19px;
+	position: relative;
+}
+/*about*/
+.about{
+	background-color: #EDEDED;
+	height: 360px;
+}
+.about>img{
+	width: 91px;
+	height: 92px;
+	display: block;
+	margin: 0 auto;
+	padding: 90px 0 40px 0;
+}
+.about>h2{
+	font-size: 54px;
+	text-align: center;
+	color: #979797;
+}
+
+/*search-new-world*/
+.search-new-world{
+	height: 340px;
+	background-image: url(../src/new-world.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding: 0 55px;
+}
+.search-new-world>h2{
+	font-size: 21px;
+	color: #fff;
+	text-align: center;
+	padding-top: 50px;
+}
+.search-new-world>h2::after{
+	content: "";
+	width: 30px;
+	height: 3px;
+	background-color: #fff;
+	display: block;
+	margin: 7px auto;
+}
+.search-new-world>p{
+	padding: 8px 0 30px 0;
+	text-align: center;
+	color: #fff;
+	font-size: 12px;
+}
+.search-new-world>ul{
+	display: flex;
+}
+.search-new-world>ul>li{
+	flex: 1;
+	padding: 0 5px;
+}
+.search-new-world>ul>li>select,.search-new-world>ul>li>button{
+	display: inline-block;
+	width: 100%;
+	height: 34px;
+	outline: 0;
+	border: none;
+}
+.search-new-world>ul>li>button{
+	background-color: #BE4E48;
+	color: #FFF;
+}
+.search-new-world>ul>li>select:focus,.search-new-world>ul>li>button:focus{
+	outline: #C17870 solid 2px;
+}
+/*activity*/
+.activity{
+	height: 400px;
+	padding: 100px 130px;
+}
+.activity>ul{
+	height: 100%;
+	display: flex;
+}
+.activity>ul>li{
+	flex: 1;
+	padding: 0 10px;
+	text-align: center;
+}
+.activity>ul>li>.painting-wrap{
+	padding: 10px;
+	border: 1px solid #DCDCDC;
+	margin: 12px auto;
+	display: inline-block;
+}
+ .activity>ul>li img{
+	width: 220px;
+	height: auto;
+} 
+.text-wrap{
+	text-align: center;
+}
+
+.text-wrap>h5{
+	font-size: 16px;
+}
+.text-wrap>p{
+	font-size: 12px;
+	color: #767676;
+}
+/*new-wrold-wrap*/
+
+.new-wrold-wrap{
+	height: 570px;
+	display: flex;
+}
+.new-wrold-wrap>.new-world-left{
+	flex: 2;
+	background-image: url(../src/sock.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.new-wrold-wrap>.new-world-right{
+	flex: 1;
+	padding: 160px 0;
+}
+.new-world-right>h3{
+	font-size: 18px;
+}
+.new-world-right>h3>span{
+	color: #E74F4D;
+}
+.new-world-right>p,.new-world-right>h3{
+	padding: 0 75px;
+}
+.new-world-right>p{
+	font-size: 12px;
+	line-height: 30px;
+	color: #767676;
+}
+.more-wrap{
+	padding-top: 40px;
+}
+.more-wrap>.more{
+	width: 110px;
+	border: 1px solid #EFA4A6;
+	color: #EFA4A6;
+	height: 30px;
+	background-color: #fff;
+	margin: 0 auto;
+	display: block;
+}
+.more-wrap>ul{
+	display: flex;
+	width: 100px;
+	margin: 30px auto 0 auto;
+	justify-content: space-around;
+}
+.more-wrap>ul>li{
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	border: 1px solid #929292;
+}
+.more-wrap>ul>.active{
+	background-color: #929292;
+}
+.see-more{
+	height: 520px;
+}
+.see-more>ul{
+	display: flex;
+	height: 100%
+}
+.see-more>ul>li{
+	padding-top: 160px;
+	flex: 1;
+}
+.see-more>ul>li>h3{
+	text-align: center;
+	line-height: 28px;
+	font-size: 21px;
+}
+.see-more-first{
+	background-color: #E74F4D;
+}
+.see-more-first>h3{
+	color: #FFF;
+}
+.see-more-second>h3{
+	color: #323232;
+}
+.see-more-second{
+	background-color: #FFF;
+	position: relative;
+}
+.see-more>ul>li>button{
+	width: 170px;
+	height: 57px;
+	font-size: 21px;
+	margin: 0 auto;
+	display: block;
+
+}
+.see-more-first>button{
+	border: 1px solid #FFF;
+	background-color: #E74F4D;
+	color: #FFF;
+}
+.see-more-second>button{
+	border: 1px solid #E74F4D;
+	color: #E85957;
+	background-color: #FFF;
+}
+.line{
+	width: 30px;
+	height: 3px;
+	display: block;
+	margin: 30px auto;
+}
+.see-more-first>.line{
+	background-color: #FFF;
+}
+.see-more-second>.line{
+	background-color: #AAA;
+}
+.arrow{
+	width: 0;
+	height: 0;
+	border-width:25px 30px;
+	border-style:solid;
+	border-color:transparent transparent transparent #FFF ;
+	position: absolute;
+	right: -58px;
+	top: 50%;
+}
+.girl{
+	background-image: url(../src/girl.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
 }
