@@ -1,0 +1,51 @@
+/*public*/
+html{
+	font-size: 14px;
+}
+body{
+	min-width: 1280px;
+}
+h1,h2,h3,h4,h5,h6{
+	font-style: "SimHei 黑体";
+	margin: 0;
+}
+p{
+	font-family: "SimSun 宋体"
+}
+ul{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+a{
+	font-family: "Microsoft YaHei 微软雅黑";
+	text-decoration: none;
+	color: #787A82;
+}
+a:hover,a:active{
+	color: #E74F4D;
+}
+
+
+/*public end*/
+
+.header{
+	padding: 10px 50px;
+	height: 37px;
+	line-height: 37px;
+	display: inline-block;
+}
+.header>.header-left{
+	height: inherit;
+}
+.header>.header-left>h1{
+	font-size: 21px;
+	height: inherit;
+	line-height: 37px;
+}
+.header>.header-left>h1>img{
+	display: inline-block;
+	width: auto;
+	height: 100%;
+	padding-right: 5px;
+}
