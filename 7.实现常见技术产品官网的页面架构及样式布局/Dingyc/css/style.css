@@ -26,6 +26,9 @@ a{
 a:hover,a:active{
 	color: #E74F4D;
 }
+button{
+	cursor: pointer;
+}
 button:focus{
 	outline: 0;
 }
@@ -100,6 +103,7 @@ button:focus{
 	background-image: url(../src/travel.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
+	background-position: center;
 	padding: 220px 0 0 110px;
 	color: #fff;
 }
@@ -142,12 +146,16 @@ button:focus{
 	margin: 0 auto;
 }
 .excellence>ul>li>p{
-	width: 158px;
-	margin: 0 auto;
+	padding: 0 40px;
+	height: 50px;
 	text-align: center;
-	color: #767676;
+	color: #AAA;
 	line-height: 19px;
-	position: relative;
+	margin: 0;
+	border-right: 2px solid #AAA;
+}
+.excellence>ul>li>.no-border{
+	border: 0;
 }
 /*about*/
 .about{
@@ -164,7 +172,7 @@ button:focus{
 .about>h2{
 	font-size: 54px;
 	text-align: center;
-	color: #979797;
+	color: rgba(50,50,50,.5);
 }
 
 /*search-new-world*/
@@ -173,6 +181,7 @@ button:focus{
 	background-image: url(../src/new-world.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
+	background-position: center;
 	padding: 0 55px;
 }
 .search-new-world>h2{
@@ -249,7 +258,7 @@ button:focus{
 }
 .text-wrap>p{
 	font-size: 12px;
-	color: #767676;
+	color: #AAA;
 }
 /*new-wrold-wrap*/
 
@@ -262,6 +271,7 @@ button:focus{
 	background-image: url(../src/sock.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
+	background-position: center;
 }
 .new-wrold-wrap>.new-world-right{
 	flex: 1;
@@ -279,8 +289,11 @@ button:focus{
 .new-world-right>p{
 	font-size: 12px;
 	line-height: 30px;
-	color: #767676;
+	color: #AAA;
 }
+
+
+/*more-wrap*/
 .more-wrap{
 	padding-top: 40px;
 }
@@ -308,6 +321,7 @@ button:focus{
 .more-wrap>ul>.active{
 	background-color: #929292;
 }
+/*see-more*/
 .see-more{
 	height: 520px;
 }
@@ -381,4 +395,175 @@ button:focus{
 	background-image: url(../src/girl.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
+	background-position: center;
+}
+/*join*/
+.join{
+	height: 750px;
+	padding: 0 130px;
+}
+.join>header{
+	padding: 100px 0;
+	text-align: center;
+}
+.join>header>h2{
+	font-size: 21px;
+	padding-bottom: 20px;
+}
+.join>header>p{
+	font-size: 12px;
+	color: #AAA;
+	width: 424px;
+	margin: 0 auto;
+	line-height: 150%;
+}
+.join>.join-body{
+	height: 470px;
+	display: flex;
+}
+.join>.join-body>.clause{
+	flex: 1;
+}
+.join>.join-body>form{
+	flex: 2;
+	margin-left: 65px;
+}
+.clause h3{
+	line-height: 193%;
+	color: rgba(34,23,20,.8);
+	padding-bottom: 10px;
+}
+.clause p{
+	color:rgba(34,23,20,0.6);
+	line-height: 175%;
+	overflow : hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+}
+.clause a{
+	color: #221714;
+	display: block;
+	text-align: right;
+	line-height: 162%;
+	font-size: 12px;
+	font-family: SimSun;
+}
+.form-join{
+	text-align: center;
+}
+.form-join>.form-group{
+	float: left;
+	display: flex;
+	padding: 10px 0;
+	width: 50%;
+}
+.form-join>.form-group>.key{
+	width: 60px;
+	color:rgba(34,23,20,0.8);
+	font-size: 12px;
+	line-height: 21px;
+}
+.form-join>.form-group>.value{
+	margin: 0 20px;
+	flex: 1;
+	border-radius: 3px;
+	border: 1px solid #E1E8ED;
+	transition: .3s;
+}
+.form-join>.form-group>.value:focus{
+	border-color: #56B4EF;
+	outline: 0;
+
+}
+.form-join>.form-group-dream{
+	width: 100%;
+}
+.form-join>.form-group-dream>.key{
+	width: 130px;
+}
+.submit-btn{
+	width: 70px;
+	height: 20px;
+	line-height: 193%;
+	background-color: transparent;
+	border: 0;
+	font-weight: bold;
+	margin-top: 100px;
+	display: inline-block;
+}
+/*connect-us*/
+.connect-us{
+	height: 360px;
+	background-color: #33363F;
+	color: #FFF;
+	text-align: center;
+}
+.connect-us>h2{
+	padding-top: 90px;
+	font-size: 21px;
+	line-height: 230%;
+}
+.connect-us>p{
+
+	width: 470px;
+	line-height: 150%;
+	font-size: 12px;
+	margin: 0 auto;
+}
+.form-email{
+	padding-top: 20px;
+	width: 510px;
+	height: 40px;
+	margin: 0 auto;
+}
+.form-email>input{
+	display: inline-block;
+	width: 404px;
+	height: 100%;
+	font-size: 16px;
+	float: left;
+	border: 0;
+	padding: 0 10px;
+}
+.form-email>button{
+	float: left;
+	width: 80px;
+	height: 100%;
+	display: inline-block;
+	padding: 0;
+	border: 0;
+	background-color: #6F7178;
+	color: #FFF;
+	font-size: 15px;
+}
+.connect-us>ul{
+	width: 220px;
+	height: 25px;
+	display: flex;
+	justify-content: space-around;
+	margin: 30px auto;
+}
+.connect-us>ul>li{
+	height: 100%;
+}
+.connect-us>ul>li img{
+	width: auto;
+	height: 100%;
+}
+
+/*footer*/
+footer{
+	background-color: #2F2F38;
+	height: 25px;
+	font-size: 12px;
+	padding: 25px 100px 10px 100px;
+}
+footer>span,footer>a{
+	line-height: 190%;
+	color: #FFF;
+}
+footer>a{
+	float: right;
 }
