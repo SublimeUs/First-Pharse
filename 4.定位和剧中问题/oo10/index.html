@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>定位和居中问题</title>
+    <style>
+        html,body{
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+        }
+        div{
+            height: 200px;
+            width: 400px;
+            background: #ccc;
+            position: relative;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+        span{
+            height: 50px;
+            width: 50px;
+            border-radius: 50px 0 0 0;
+            background: #fc0;
+            position: absolute;
+        }
+        span:first-child{
+            transform: rotate(180deg);
+            top: 0;
+            left: 0;
+        }
+        span:nth-child(2){
+            bottom: 0;
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <span></span>
+        <span></span>
+    </div>
+</body>
+</html>
