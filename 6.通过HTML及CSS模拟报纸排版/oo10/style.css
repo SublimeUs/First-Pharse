@@ -1,0 +1,385 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+html,body{
+    font: 16px "微软雅黑";
+}
+a,a:link,a:visited{
+    text-decoration: none;
+}
+#main{
+    width: 980px;
+    height: auto;
+    margin: 0 auto;
+}
+header{
+    height: 61px;
+    width: 892px;
+    border-bottom: 2px solid #928f8c;
+    font: 12px "黑体";
+    color: #fff;
+    position: relative;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+header::before{
+    content: "";
+    display: inline-block;
+    height: 61px;
+    width: 110px;
+    background: #d55d5c;
+}
+header a{
+    position: absolute;
+    bottom: 6px;
+}
+header a.ife{
+    left: 7px;
+    color: #fff;
+}
+header a.date{
+    right: 1px;
+    color: #d55d5c;
+}
+section {
+    width: 892px;
+    height: auto;
+    margin: 0 auto;
+}
+.clearBoth::after{
+    visibility: hidden;
+    display: block;
+    content: "";
+    clear: both;
+}
+/******** section one css  ***********/
+section.one{
+    padding-top: 34px;
+}
+.one .left{
+    width: 641px;
+    height: 301px;
+    background: url("p1.jpg");
+    float: left;
+    position: relative;
+}
+.one .left::before{
+    content: "";
+    display: inline-block;
+    height: 301px;
+    width: 191px;
+    background: rgba(66,140,89,.5);
+    position: absolute;
+    left: 0;
+}
+.one .left::after{
+    content: "";
+    display: inline-block;
+    height: 301px;
+    width: 191px;
+    background: rgba(204,118,128,.5);
+    position: absolute;
+    right: 0;
+}
+.one .right{
+    width: 203px;
+    height: 301px;
+    float: right;
+    position: relative;
+}
+.one .right .topLine{
+    padding-top: 1px;
+    height: 2px;
+    width: 203px;
+    background: #cc8091;
+}
+.one .right h2{
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 40px;
+    text-decoration: underline;
+}
+.one .right .p1{
+    font: 12px "楷体";
+    color: #676767;
+    line-height: 10px;
+}
+.one .right .p2 {
+    font: 116px "微软雅黑";
+    font-weight: 400;
+    font-style: italic;
+    color: #75B86B;
+    margin: -10px 0 0 -16px;
+}
+.one .right .p3 {
+    font-size: 55px;
+    color: #cc8091;
+    margin-top: -6px;
+}
+.one .right .p4 {
+    font-size: 21px;
+    color: #cc8091;
+    position: absolute;
+    bottom: 12px;
+    left: 90px;
+}
+.one .right .p5 {
+    font-size: 12px;
+    color: #c5c5c6;
+    position: absolute;
+    bottom: 0;
+    left: 90px;
+}
+/******** section two css  ***********/
+section.two {
+    padding-top: 40px;
+}
+section.two h3 {
+    line-height: 24px;
+    font-size: 16px;
+    text-decoration: underline;
+}
+.two>div {
+    width: 230px;
+    float: left;
+    padding-left: 30px;
+}
+.two>div:first-child{
+    padding-left: 0;
+}
+.two .what h3 {
+    color: #428c59;
+}
+.two .when h3 {
+    color: #d2984f;
+}
+.two .how h3 {
+    color: #cc7680;
+}
+.two p {
+    font: 12px "宋体";
+    color: #767777;
+    line-height: 16px;
+}
+.pdtop {
+    padding-top: 8px;
+}
+.how .howBottom {
+    margin-top: 22px;
+}
+.how .howBottom p {
+    font-family:"微软雅黑";
+    color: #231815;
+    line-height: 26px;
+    opacity: .7;
+}
+.how .howBottom p span {
+    padding-left: 5px;
+    color: #dd8c7d;
+    font-style: italic;
+}
+/******** section three css  ***********/
+section.three {
+    padding-top: 70px;
+}
+.three .left {
+    width: 415px;
+    float: left;
+}
+.three .left h1 {
+    font: 42px "黑体";
+    font-weight: 600;
+    color: #11456B;
+    line-height: 45px;
+}
+.three .left h2 {
+    font: 33px "黑体";
+    font-weight: 600;
+    color: #11456B;
+}
+.three .left span {
+    font-size: 72px;
+    font-style: italic;
+    color: #f5e327;
+}
+.three .left p {
+    font: 12px "宋体";
+    color: #767777;
+    line-height: 16px;
+    border-top: 2px solid #10456b;
+    margin-top: 10px;
+    padding-top: 20px;
+}
+.three .left p:first-letter {
+    font: 70px "微软雅黑";
+    float: left;
+    color: #f5e327;
+    line-height: 66px;
+    padding-right: 6px;
+}
+.three .left img {
+    float: right;
+    padding: 20px 0 20px 20px;
+}
+.three .right {
+    float: right;
+}
+.three .right .rightTop {
+    height: 275px;
+    width: 458px;
+    position: relative;
+    background: url("p3.jpg") center;
+    background-size: cover;
+}
+.three .right .rightTop::before {
+    display: inline-block;
+    content: "";
+    height: 60px;
+    width: 100%;
+    background: #030000;
+    opacity: .4;
+    position: absolute;
+    bottom: 0;
+}
+.three .rightTop .line {
+    width: 3px;
+    height: 44px;
+    background: #72b16a;
+    position: absolute;
+    left: 38px;
+    bottom: 8px;
+}
+.three .rightTop .title {
+    font-size: 26px;
+    color: #fff;
+    position: absolute;
+    left: 52px;
+    bottom: 0;
+    line-height: 60px;
+    letter-spacing: 1px;
+}
+.three .rightTop .smallTitle {
+    font-size: 12px;
+    color: #6fa766;
+    position: absolute;
+    left: 165px;
+    bottom: 16px;
+    letter-spacing: 1.4px;
+}
+.three .right .rightBottom {
+    height: 318px;
+    width: 458px;
+    margin-top: 30px;
+    background: #efedd7;
+    position: relative;
+}
+.rightBottom .list {
+    padding-top: 20px;
+}
+.rightBottom .list ul:first-child {
+    font:16px "微软雅黑";
+    color: #6c6a67;
+    line-height: 40px;
+    list-style-image: url("san.png");
+    padding-left: 38px;
+    float: left;
+}
+.rightBottom .list ul:nth-child(2){
+    list-style: none;
+    font: 14px "宋体";
+    font-style: italic;
+    color: #6c6a67;
+    line-height: 40px;
+    padding-right: 24px;
+    float: right;
+}
+.pinkBox {
+    width: 260px;
+    height: 158px;
+    background: #d55d5c;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+.pinkBox .line {
+    bottom: 34px;
+    left: 77px;
+    height: 86px;
+    width: 2px;
+    position: absolute;
+    background: #fff;
+}
+.pinkBox .zero {
+    font-size: 110px;
+    line-height: 158px;
+    color: #fff;
+    padding-left: 6px;
+}
+.pinkBox .number {
+    width: 160px;
+    font-size: 18px;
+    line-height: 24px;
+    color: #fff;
+    position: absolute;
+    left: 88px;
+    top: 40px;
+}
+.pinkBox .world {
+    width: 160px;
+    font-size: 12px;
+    color: #fff;
+    line-height: 12px;
+    position: absolute;
+    left: 90px;
+    bottom: 40px;
+}
+.helloWorld {
+    height: 158px;
+    width: 188px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+.helloWorld p {
+    font: 14px "黑体";
+    color: #5a5b5b;
+    line-height: 18px;
+    padding: 30px 0 0 30px;
+    font-style: italic;
+}
+.helloWorld p::before {
+    content: "“";
+    color: #d65d5d;
+    font-size: 72px;
+    position: absolute;
+    top: 26px;
+    left: -40px;
+}
+.helloWorld p::after {
+    content: "”";
+    color: #d65d5d;
+    font-size: 72px;
+    position: absolute;
+    bottom: 6px;
+    right: -10px;
+}
+/******** footer css  ***********/
+footer {
+    height: 60px;
+    width: 892px;
+    padding-top: 40px;
+    margin: 0 auto;
+}
+footer .line {
+    height: 1px;
+    background: #938e8c;
+    width: 100%;
+}
+footer a {
+    float: right;
+    padding: 2px;
+    font: 14px "黑体";
+    color: #d45d5c;
+}
