@@ -75,26 +75,29 @@
 			<p>每个城市的有不同的活动信息，请自主查询您所需要了解的城市</p>
 			<ul>
 				<li>
-					<select name="country">
-						<option value="China">中国</option>
-						<option value="U.S.A">美国</option>
-						<option value="Japan">日本</option>
-						<option value="Indian">印度</option>
-					</select>
+					<input type="text" readonly value="国家" class="js-select">
+					<ul class="js-option" name="country">
+						<li value="China">中国</li>
+						<li value="U.S.A">美国</li>
+						<li value="Japan">日本</li>
+						<li value="Indian">印度</li>
+					</ul>
 				</li>
 				<li>
-					<select name="province">
-						<option value="jiangsu">江苏</option>
-						<option value="anhui">安徽</option>
-						<option value="zhejiang">浙江</option>
-					</select>
+					<input type="text" readonly value="省份" class="js-select">
+					<ul class="js-option" name="province">
+						<li value="jiangsu">江苏</li>
+						<li value="anhui">安徽</li>
+						<li value="zhejiang">浙江</li>
+					</ul>
 				</li>
 				<li>
-					<select name="city">
-						<option value="suzhou">苏州</option>
-						<option value="nanjing">南京</option>
-						<option value="xuzhou">徐州</option>
-					</select>
+					<input type="text" readonly value="城市" class="js-select">
+					<ul class="js-option" name="city">
+						<li value="suzhou">苏州</li>
+						<li value="nanjing">南京</li>
+						<li value="xuzhou">徐州</li>
+					</ul>
 				</li>
 				<li>
 					<button class="search-btn">搜索</button>
@@ -258,5 +261,6 @@
 		<span>@2016新世界</span>
 		<a href="#">Back to top</a>
 	</footer>
+	<script src="js/javascript.js"></script>
 </body>
 </html>
