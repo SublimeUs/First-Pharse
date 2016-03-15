@@ -12,11 +12,11 @@
 
 	function switchObj(){
 		var element=this.nextElementSibling;
-		if(element.style.opacity==="1"){
-			element.style.opacity="0";
+		if(element.style.display==="block"){
+			element.style.display="none";
 		}
 		else{
-			element.style.opacity="1.0";
+			element.style.display="block";
 		}
 	}
 }());

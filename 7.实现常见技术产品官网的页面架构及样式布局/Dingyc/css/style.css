@@ -72,6 +72,11 @@ button:focus{
 	width: 460px;
 }
 .header>.header-right>a{
+	padding-left: 20px;
+	background-image: url(../src/user.png);
+	background-repeat: no-repeat;
+	background-position: 7px;
+	background-size: 16px 20px;
 	width: 50px;
 	display: inline-block;
 	text-align: center;
@@ -209,22 +214,32 @@ button:focus{
 }
 .search-new-world>ul>li{
 	flex: 1;
-	padding: 0 5px;
+	margin: 0 5px;
 }
 .js-option{
-	opacity: 0;
+	display: none;
 	transition: .3s;
 	color: #A8A9AA;
+	border:1px solid #C17870;
+	border-top: 0;
 }
 .js-option>li{
 	padding: 0 20px;
 	background-color: #fff;
 	line-height: 27px;
 	font-size: 12px;
+	position: relative;
+	cursor: pointer;
 }
 .js-option>li:hover{
 	background-color: #BE4E48;
 	color: #FFF;
+}
+.js-option>li:hover::before{
+	content: "√";
+	position: absolute;
+	left: 5px;
+	font-weight: bolder;
 }
 .search-new-world>ul>li>input,.search-new-world>ul>li>button{
 	display: block;
@@ -236,14 +251,15 @@ button:focus{
 	padding-left: 20px;
 	cursor: pointer;
 	color: #A8A9AA;
+	border:1px solid #C17870;
 }
 .search-new-world>ul>li>button{
 	background-color: #BE4E48;
 	color: #FFF;
 }
-.search-new-world>ul>li>input:focus,.search-new-world>ul>li>button:focus{
+/* .search-new-world>ul>li>input:focus,.search-new-world>ul>li>button:focus{
 	outline: #C17870 solid 1px;
-}
+} */
 /*activity*/
 .activity{
 	height: 400px;
