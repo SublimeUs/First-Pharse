@@ -215,6 +215,7 @@ button:focus{
 .search-new-world>ul>li{
 	flex: 1;
 	margin: 0 5px;
+	position: relative;
 }
 .js-option{
 	display: none;
@@ -236,22 +237,36 @@ button:focus{
 	color: #FFF;
 }
 .js-option>li:hover::before{
-	content: "√";
+	content: "✔";
 	position: absolute;
 	left: 5px;
 	font-weight: bolder;
 }
-.search-new-world>ul>li>input,.search-new-world>ul>li>button{
+.js-select,.search-new-world>ul>li>button{
 	display: block;
 	width: 100%;
 	box-sizing: border-box;
 	height: 34px;
+	padding: 5px 0 5px 20px;
 	outline: 0;
 	border: none;
-	padding-left: 20px;
 	cursor: pointer;
 	color: #A8A9AA;
 	border:1px solid #C17870;
+}
+.select-wrap::before{
+	content: "﹀";
+	display: inline-block;
+	width: 19px;
+	height: 18px;
+	text-align: center;
+	line-height: 25px;
+	background-color: #BE4E48;
+	position: absolute;
+	right: 10px;
+	top: 8px;
+	color: #FFF;
+	font-weight: bolder;
 }
 .search-new-world>ul>li>button{
 	background-color: #BE4E48;
