@@ -1,0 +1,12 @@
+.custom{
+	height: 50px;
+	margin: 10px;
+	margin-right: 10px;
+	border: 1px solid #999;
+	background-color: #eee;
+	-webkit-box-sizing: border-box;
+		   -moz-box-sizing: border-box;
+		   	-ms-box-sizing: border-box;
+		   	 -o-box-sizing: border-box;
+		   		box-sizing: border-box;
+}
