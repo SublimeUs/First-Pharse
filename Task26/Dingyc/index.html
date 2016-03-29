@@ -39,6 +39,27 @@
 		font-weight: bolder;
 		text-align: center;
 	}
+	#caption{
+		width: 50%;
+		display: inline-block;
+	}
+	#caption>div{
+		padding:10px 0;
+	}
+	#caption button{
+		margin: 0 10px;
+	}
+	.message{
+		width: 30%;
+		display: inline-block;
+		color: #FFF;
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
+	.message>p{
+
+	}
 	</style>
 </head>
 <body>
@@ -48,6 +69,7 @@
 	<form action="" id="caption">
 		<button type="button" id="add">增加飞船</button>
 	</form>
+	<div class="message" id="message"></div>
 	<script src="task26.js"></script>
 </body>
 </html>

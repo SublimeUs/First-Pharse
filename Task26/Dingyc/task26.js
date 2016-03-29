@@ -1,5 +1,6 @@
 //新手不习惯写注释啊，不知道三十天后我还能不能看懂我的代码
 var x=0;
+var message="";
 function SpaceShip(){
 	this.timer=null;
 	this.time=30;
@@ -11,6 +12,7 @@ function SpaceShip(){
 	this.angleSpeed=(this.speed/this.perimeter)*360;
 	this.angle=0;
 	this.energy=100;
+	this.status="stop";
 	this.init=function(){
 		var spaceShip=document.createElement("div");
 		spaceShip.className="spaceShip";
@@ -27,21 +29,31 @@ function SpaceShip(){
 
 	this.start=function(){
 		var that=this;
-		
+		if(this.status==="start"){
+			addMessage("err:飞船已经启动！");
+			return;
+		}
+		this.status="start";
+		addMessage("启动飞船成功！");
 		this.timer=setInterval(function(){
 			that.angle+=that.angleSpeed;
 			that.left=250-Math.cos(that.angle)*that.r-25;
 			that.top=250-Math.sin(that.angle)*that.r-10;
 			that.move(that.element);
-			that.energy-=0.5;
+			that.energy-=1;
 			if(that.energy<=0){
-				that.element.innerText=that.energy+"%";
 				that.stop();
 			}
 		},this.time);
 	}
 	this.stop=function(){
 		var that=this;
+		if(this.status==="stop"){
+			addMessage("err:飞船已经停止！");
+			return;
+		}
+		this.status="stop";
+		addMessage("停止飞船成功！");
 		clearInterval(that.timer);
 	}
 	this.charge=function(){
@@ -50,12 +62,16 @@ function SpaceShip(){
 			if(that.energy>=100){
 				that.energy=100;
 			}
+			else if(that.energy<=90){
+				that.energy+=10;
+			}
 			else{
-				that.energy+=5;
+				return;
 			}
 		},1000)
 	}
 	this.distory=function(){
+		addMessage("摧毁飞船成功！");
 		this.element.parentNode.removeChild(this.element);
 		this.btnWrap.parentNode.removeChild(this.btnWrap);
 	}
@@ -63,7 +79,7 @@ function SpaceShip(){
 		var that=this;
 		setInterval(function(){
 			that.element.innerText=that.energy+"%";
-		},500);
+		},200);
 	}
 	this.createCaptain=function(){
 		var btnWrap=document.createElement("div");
@@ -77,13 +93,13 @@ function SpaceShip(){
 		distoryBtn.setAttribute("type","button");
 		startBtn.setAttribute("type","button");
 		stopBtn.setAttribute("type","button");
-		distoryBtn.addEventListener("click",function(){
+		listen(distoryBtn,"click",function(){
 			that.distory();
 		});
-		stopBtn.addEventListener("click",function(){
+		listen(stopBtn,"click",function(){
 			that.stop();
 		});
-		startBtn.addEventListener("click",function(){
+		listen(startBtn,"click",function(){
 			that.start();
 		});
 		btnWrap.appendChild(startBtn);
@@ -98,10 +114,33 @@ function SpaceShip(){
 
 }
 
-document.getElementById("add").addEventListener("click",function(){
+function listen(obj,type,foo){
+	obj.addEventListener(type,function(){
+		var i=parseInt(Math.random()*10);
+		if(i<3){
+			addMessage("操作失败!");
+			return;
+		}
+		else{
+			addMessage("操作成功!");
+			setTimeout(function(){
+				foo();
+			},1000)
+		}
+	});
+}
+
+
+listen(document.getElementById("add"),"click",function(){
 	if(x>=4){
 		return;
 	}
 	new SpaceShip;
 	x++;
 });
+
+function addMessage(mess){
+	var date=new Date();
+	message+=("<p>"+date.getHours()+":"+date.getMinutes()+":"+date.getSeconds()+" "+mess+"</p>");
+	document.getElementById('message').innerHTML=message;
+}
