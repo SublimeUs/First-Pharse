@@ -62,13 +62,13 @@ function SpaceShip(){
 			if(that.energy>=100){
 				that.energy=100;
 			}
-			else if(that.energy<=90){
-				that.energy+=10;
+			else if(that.energy<100){
+				that.energy+=1;
 			}
 			else{
 				return;
 			}
-		},1000)
+		},100)
 	}
 	this.distory=function(){
 		addMessage("摧毁飞船成功！");
