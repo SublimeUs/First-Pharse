@@ -77,6 +77,7 @@
 		this.translate = "translate(0,0)";
 		this.rotate = "rotate(0deg)";
 		this.status = "static";
+		this.count=0;
 		this.init = function() {
 			var element = document.createElement('div');
 			element.className = "car";
@@ -102,10 +103,6 @@
 				if (boxNodes[key].id === x + "-" + y&&!boxNodes[key].wall) {
 					check = true;
 				}
-			}
-			if(!check&&this.timer){
-				clearInterval(that.timer);
-				this.timer=null;
 			}
 			return check;
 		};
@@ -168,43 +165,38 @@
 		this.goTo = function(x, y) {
 			var xLen = x - this.x;
 			var yLen = y - this.y;
-			if(!this.check(x,y)){
-				return;
-			}
-			if (this.timer || !x || !y) {
-				return;
-			}
-			if (xLen > 0) {
-				this.numTurn(1);
-			} else if (xLen < 0) {
-				this.numTurn(3);
-			}
+			turn(xLen,yLen);
 			this.status="move";
-			this.timer = setInterval(function() {
-				if (that.x == x) {
-					clearInterval(that.timer);
-					that.timer = null;
-					if (yLen > 0) {
+			if(xLen==0&&yLen==0){
+				return;
+			}
+			else{
+				setTimeout(function(){
+					that.go();
+					that.goTo(x,y);
+				},500)
+			}
+			function turn(xL,yL){
+				if(xL!=0){
+					if(xL>0){
+						that.numTurn(1);
+					}
+					else{
+						that.numTurn(3);
+					}
+				}
+				else if(yL!=0){
+					if(yL>0){
 						that.numTurn(2);
-					} else if (yLen < 0) {
+					}
+					else{
 						that.numTurn(4);
 					}
-					that.timer = setInterval(function() {
-						if (that.y == y) {
-							clearInterval(that.timer);
-							that.timer = null;
-							setTimeout(function(){
-								that.status="static";
-							},300);
-						} else {
-							that.go();
-						}
-					}, 500);
-
-				} else {
-					that.go();
 				}
-			}, 500);
+				else{
+					return;
+				}
+			}
 		};
 		this.findPath=function(x,y){
 			var close=[];
@@ -213,7 +205,7 @@
 			var tmpX=that.x;
 			var tmpY=that.y;
 			var min={x:tmpX,y:tmpY,len:len(tmpX,tmpY,x,y)};
-			path.push({x:tmpX,y:tmpY});
+			var count=0;
 			close.push({x:tmpX,y:tmpY});
 			for(var i in boxNodes){
 				if(boxNodes[i].wall){
@@ -221,7 +213,7 @@
 				}
 			}
 			find(tmpX,tmpY,x,y);
-			console.log(tmp);
+			this.goPath(path);
 			function find(x,y,targetX,targetY){
 				var tmpArr=[];
 				tmpArr.push({x:x+1,y:y,len:len(x+1,y,targetX,targetY)});
@@ -265,6 +257,21 @@
 			}
 
 		};
+		this.goPath=function(path){
+			if(that.count>=path.length){
+				that.count=0;
+				return;
+			}
+			else{
+				setTimeout(function(){
+					that.goTo(path[that.count].x,path[that.count].y)
+					that.count++;
+					console.log(that.count)
+					that.goPath(path);
+				},500)
+			}
+		}
+
 		this.transform = function() {
 			this.element.style.transform = this.translate + this.rotate;
 		};
@@ -290,9 +297,7 @@
 			val = val.replace(/\s*/, "");
 			var x = val.split(",")[0];
 			var y = val.split(",")[1];
-			car.goTo(x, y);
-		} else if (val.match(/find/)){
-			car.findPath(9,9);
+			car.findPath(x, y);
 		}
 	});
 	//屏蔽右键菜单
