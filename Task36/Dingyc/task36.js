@@ -130,9 +130,9 @@
 			} else {
 				return;
 			}
-			this.next();
 			this.transform();
 			this.checkDirectionNum();
+			this.next();
 		};
 		this.numTurn = function(num) {
 			if (this.directionNum !== num) {
@@ -321,7 +321,7 @@
 				}
 			}
 			if (!check) {
-				console.log("error");
+				window.console.log("error");
 			}
 		};
 
