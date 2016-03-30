@@ -40,7 +40,7 @@ function SpaceShip(){
 			that.left=250-Math.cos(that.angle)*that.r-25;
 			that.top=250-Math.sin(that.angle)*that.r-10;
 			that.move(that.element);
-			that.energy-=1;
+			that.energy-=0.5;
 			if(that.energy<=0){
 				that.stop();
 			}
@@ -62,13 +62,13 @@ function SpaceShip(){
 			if(that.energy>=100){
 				that.energy=100;
 			}
-			else if(that.energy<=90){
-				that.energy+=10;
+			else if(that.energy<100){
+				that.energy+=1;
 			}
 			else{
 				return;
 			}
-		},1000)
+		},100)
 	}
 	this.distory=function(){
 		addMessage("摧毁飞船成功！");
