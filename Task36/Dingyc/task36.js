@@ -397,7 +397,7 @@
 			if (boxNodes[i].wall) {
 				boxNodes[i].wall = false;
 				boxNodes[i].element.className = "boxNodes";
-				boxNodes[i].element.style.backgroundColor = "";
+				boxNodes[i].element.style.backgroundColor="";
 			}
 		}
 	});
