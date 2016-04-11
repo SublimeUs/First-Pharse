@@ -3,65 +3,19 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Task36</title>
-	<style type="text/css">
-	#box{
-		width: 600px;
-		height: 600px;
-		border: 1px solid #CCC;
-		display: flex;
-		flex-wrap: wrap;
-		margin: 20px auto;
-	}
-	.boxNodes{
-		box-sizing: border-box;
-		border: 1px solid #EEE;
-	}
-	.boxNodes>span{
-		line-height: 30px;
-		width: 100%;
-		height: 100%;
-		display: inline-block;
-		text-align: center;
-		color: #333;
-		font-weight: bold;
-	}
-	.wall{
-		background-color: #000;
-	}
-	.car{
-		position: absolute;
-		background-color: #ccc;
-		transform: translate(0,0);
-		transition: .3s;
-		z-index: 100;
-	}
-	.car::after{
-		content: "";
-		height: 100%;
-		width: 20%;
-		position: absolute;
-		right: 0;
-		background-color: #FFC0CB;
-	}
-	</style>
+	<link rel="stylesheet" type="text/css" href="tesk36.css">
 </head>
 <body>
-	<div id="box"></div>
-	<input type="text" id="input">
-	<button type="button" id="btn">确定</button>
-	<button type="button" id="left">左转</button>
-	<button type="button" id="right">右转</button>
-	<button type="button" id="back">反转</button>
-	<button type="button" id="go">前进</button>
-	<button type="button" id="color">粉刷</button>
-	<button type="button" id="randomWall">随机墙</button>
-	<button type="button" id="clearWall">清除墙</button>
-	<p>转向： turn [left|right|back]</p>
-	<p>粉刷： color [color]</p>
-	<p>路线： goto [x,y]</p>
-	<p>前进： go</p>
-	<p>右键手动建墙</p>
-
-	<script src="./task36.js"></script>
+	<div id="wrap" class="wrap"></div>
+	<div class="command-wrap">
+		<p>指令</p>
+		<div class="line-wrap">
+			<div class="line" id="line"></div>
+		</div>
+		<textarea class="command" id="command" rows="10"></textarea>
+		<button type="button" id="btn" class="btn">确定</button>
+	</div>
+	
+	<script src="./test.js"></script>
 </body>
 </html>
